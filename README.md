@@ -153,18 +153,22 @@ flowchart LR
 
 Here are a few glimpses into the AEGIS operational dashboards:
 
-### Live Fleet Visualization & Risk Metrics
-*A force-directed representation of agent interactions, highlighting causal pathways and cascading risk metrics.*
-![Live Fleet Visualization](docs/screenshots/5.jpeg)
+### Login & Authentication
+*Secure entry portal for AEGIS operators and administrators with zero-trust identity verification.*
+![Login](docs/screenshots/1.jpeg)
 
-### Constitutional Court Adjudication
-*The multi-agent LLM debate dashboard, displaying the real-time reasoning of the Policy, Risk, and Ethics personas.*
-![Constitutional Court Adjudication](docs/screenshots/2.jpeg)
+### Mission Control
+*The central command dashboard providing a real-time overview of fleet operations, active alerts, and system health.*
+![Mission Control](docs/screenshots/2.jpeg)
 
-### Pre-Action Shadow Simulation (PAST)
-*Digital twin modeling environment where proposed agent actions are probabilistically simulated for emergent threats.*
-![PAST Simulation](docs/screenshots/15.jpeg)
+### Agent Fleet Management
+*Detailed topology and real-time status of all autonomous agents currently governed by the AEGIS system.*
+![Agent Fleet](docs/screenshots/3.jpeg)
 
-### Hierarchical Global Kill Switch
-*The emergency mission control view, capable of halting specific agent classes or executing a complete topological shutdown.*
-![Global Kill Switch](docs/screenshots/8.jpeg)
+### Spend Governance
+*Dynamic, risk-adjusted spend limits and probabilistic enforcement caps across the agent fleet.*
+![Spend Governance](docs/screenshots/7.jpeg)
+
+### Advanced Analytics
+*Deep-dive telemetry and historical insights into fleet performance, cascade risks, and behavioral drift detection.*
+![Analytics](docs/screenshots/14.jpeg)
