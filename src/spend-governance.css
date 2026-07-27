@@ -1,0 +1,169 @@
+/* spend-governance.css */
+.spend-layout {
+  display: flex;
+  height: 100vh;
+  padding: 32px 48px;
+  gap: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.spend-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.spend-header {
+  margin-bottom: 48px;
+}
+
+.spend-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #F8FAFC;
+}
+
+.spend-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #64748B;
+  margin-top: 8px;
+}
+
+.sliders-container {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+}
+
+.slider-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.slider-track {
+  width: 24px;
+  height: 400px;
+  background: #0A1A2F;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: inset 0 4px 12px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.slider-handle {
+  width: 40px;
+  height: 80px;
+  background: linear-gradient(180deg, #2a3a5a, #1a2a4a);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.2);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.slider-handle:active {
+  cursor: grabbing;
+}
+
+.slider-grip {
+  width: 20px;
+  height: 2px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 1px;
+}
+
+.slider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slider-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.slider-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #F8FAFC;
+  letter-spacing: -0.04em;
+}
+
+/* Heatmap */
+.spend-heatmap {
+  flex: 1;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(12, 1fr);
+  gap: 4px;
+  flex: 1;
+  align-items: stretch;
+}
+
+.heatmap-y-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+}
+
+.heatmap-cell {
+  border-radius: 4px;
+  transition: background 300ms ease;
+  position: relative;
+}
+
+.heatmap-cell:hover::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.heat-safe {
+  background: rgba(0, 111, 207, 0.4);
+}
+.heat-warning {
+  background: rgba(99, 91, 255, 0.8);
+  box-shadow: 0 0 12px rgba(99, 91, 255, 0.4);
+}
+.heat-capped {
+  background: rgba(255, 149, 0, 1);
+  box-shadow: 0 0 16px rgba(255, 149, 0, 0.6);
+  animation: pulse-heat 2s infinite;
+}
+
+@keyframes pulse-heat {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

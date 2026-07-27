@@ -1,0 +1,151 @@
+/* governance-pipeline.css */
+.pipeline-layout {
+  height: 100vh;
+  padding: 48px;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pipeline-header {
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 10;
+}
+
+.pipeline-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #F8FAFC;
+  text-shadow: 0 4px 16px rgba(255,255,255,0.2);
+}
+
+.pipeline-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #64748B;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* 3D Grid Floor */
+.pipeline-floor {
+  position: absolute;
+  bottom: -20vh;
+  left: 0;
+  right: 0;
+  height: 60vh;
+  background-image: 
+    linear-gradient(rgba(0, 111, 207, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 111, 207, 0.2) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(600px) rotateX(75deg);
+  transform-origin: top;
+  z-index: 0;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  opacity: 0.5;
+}
+
+/* The Sankey Container */
+.sankey-container {
+  flex: 1;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG Streams */
+.sankey-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sankey-path {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-width 300ms ease, opacity 300ms ease;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.sankey-path:hover {
+  stroke-width: 24;
+  opacity: 1 !important;
+}
+
+.path-ingress { stroke: rgba(255, 255, 255, 0.4); filter: drop-shadow(0 0 12px rgba(255,255,255,0.4)); }
+.path-fast { stroke: #006FCF; filter: drop-shadow(0 0 16px rgba(0,111,207,0.6)); }
+.path-court { stroke: #635BFF; filter: drop-shadow(0 0 16px rgba(99,91,255,0.6)); }
+.path-human { stroke: #FF9500; filter: drop-shadow(0 0 16px rgba(255,149,0,0.6)); }
+
+/* Nodes */
+.sankey-node {
+  position: absolute;
+  background: rgba(8, 19, 33, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 
+    0 16px 32px rgba(0,0,0,0.6), 
+    inset 0 1px 1px rgba(255,255,255,0.1);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.node-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #F8FAFC;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.node-tps {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.tps-ingress { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.4); }
+.tps-fast { color: #34C759; text-shadow: 0 0 12px rgba(52,199,89,0.4); }
+.tps-court { color: #635BFF; text-shadow: 0 0 12px rgba(99,91,255,0.4); }
+.tps-human { color: #FF9500; text-shadow: 0 0 12px rgba(255,149,0,0.4); }
+
+/* Floating KPI Card */
+.kpi-tooltip {
+  position: absolute;
+  background: rgba(5, 10, 20, 0.95);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 111, 207, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 111, 207, 0.1);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.kpi-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+}
+.kpi-label { color: #94A3B8; }
+.kpi-val { color: #F8FAFC; font-family: 'JetBrains Mono', monospace; }

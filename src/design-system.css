@@ -1,0 +1,129 @@
+/* design-system.css */
+.ds-layout {
+  padding: 48px;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.ds-header {
+  margin-bottom: 24px;
+}
+
+.ds-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #F8FAFC;
+  text-shadow: 0 4px 16px rgba(255,255,255,0.2);
+}
+
+.ds-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #64748B;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ds-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #F8FAFC;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.color-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.color-swatch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.color-sphere {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 
+    inset -8px -8px 16px rgba(0,0,0,0.4),
+    inset 4px 4px 12px rgba(255,255,255,0.2),
+    0 8px 24px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+.color-sphere::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  filter: blur(2px);
+}
+
+.color-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #F8FAFC;
+  text-align: center;
+}
+
+.color-hex {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #64748B;
+}
+
+.component-canvas {
+  background: rgba(8, 19, 33, 0.4);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 
+    0 24px 64px rgba(0, 0, 0, 0.6), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+/* 3D Glass Card used in DS */
+.ds-glass-card {
+  width: 300px;
+  height: 180px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.1),
+    0 16px 32px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #F8FAFC;
+  transform: perspective(1000px) rotateY(15deg) rotateX(5deg);
+  transition: transform 300ms ease;
+}
+
+.ds-glass-card:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
