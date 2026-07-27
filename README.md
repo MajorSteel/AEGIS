@@ -146,3 +146,25 @@ flowchart LR
 - **Formal Verification:** Mathematically proving certain policies can never be violated (via Z3 Theorem Prover).
 - **Vision AI (VLM) Auditing:** Using Vision-Language Models to audit agent UI interactions if an agent operates via a screen.
 - **Speech AI Emergency Stop:** Voice-activated hierarchical kill switch ("AEGIS, halt all agents").
+
+---
+
+## 📸 Interface Gallery
+
+Here are a few glimpses into the AEGIS operational dashboards:
+
+### Live Fleet Visualization & Risk Metrics
+*A force-directed representation of agent interactions, highlighting causal pathways and cascading risk metrics.*
+![Live Fleet Visualization](docs/screenshots/5.jpeg)
+
+### Constitutional Court Adjudication
+*The multi-agent LLM debate dashboard, displaying the real-time reasoning of the Policy, Risk, and Ethics personas.*
+![Constitutional Court Adjudication](docs/screenshots/2.jpeg)
+
+### Pre-Action Shadow Simulation (PAST)
+*Digital twin modeling environment where proposed agent actions are probabilistically simulated for emergent threats.*
+![PAST Simulation](docs/screenshots/15.jpeg)
+
+### Hierarchical Global Kill Switch
+*The emergency mission control view, capable of halting specific agent classes or executing a complete topological shutdown.*
+![Global Kill Switch](docs/screenshots/8.jpeg)
